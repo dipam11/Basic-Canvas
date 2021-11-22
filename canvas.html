@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abstract Drawing</title>
+
+    <link rel="stylesheet" href="canvas.css">
+</head>
+
+<body>
+    <div class="title">
+        <h1>Paint Your Own Picture</h1>
+    </div>
+
+    <canvas id="canvas1" onmousedown="startPaint()" onmousemove="doPaint(event.offsetX, event.offsetY)"
+        onmouseup="endPaint()">
+    </canvas>
+
+    <div>
+        <div class="settings">
+            <p class="para">Set Width <input type="text" name="value" id="dim" oninput="setWidth(this.value)"></p>
+            <p class="para">Set Height <input type="text" name="value" id="dim" oninput="
+                    setHeight(this.value)"></p>
+        </div>
+
+        <div class="settings">
+            <p class="para">
+                Brush Color
+                <input type="color" value="#000" onchange="changeColor(this.value)">
+            </p>
+            <p class="para">
+                Brush Size
+                <input type="range" id="sizeInput" min="1" max="30" value="20" oninput="resizeBrush(this.value)">
+                <output id="sizeOutput">20</output>
+            </p>
+        </div>
+    </div>
+
+    <p class="para">
+        <input type="button" id="clear" value="Clear Canvas" onclick="clearCanvas()">
+    </p>
+
+
+    <script src="canvas.js"></script>
+</body>
+
+</html>
